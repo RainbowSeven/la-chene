@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="Chene networks" content="access-denied">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="chene networks" content="website">
+        <title>Ch&#234;ne Networks</title>
+
+        <style type="text/css">
+            body {
+                background-color: #000;
+            }
+            a:link {
+                color:#0000ff;
+            }
+            a:visited {
+                color:#800080;
+            }
+            a:hover {
+                color:#00ff00;
+            }
+             /* IMAGE STYLES */
+            img {
+                border:0 none;
+            }
+            .home-icon a {
+                border-radius: 60px;
+                background-color: #5F7C8E;
+                padding: 15px;
+                display: block;
+            }
+            .home-icon a:hover {
+                background-color: #DEECF5;
+                border:  1px solid #990000;
+            }
+
+            /* CONTAINER RULES */
+            #container { 
+                margin:0px auto; 
+                height:100%;  
+                text-align:left; 
+                padding:20px;
+                position: relative;
+            }
+            
+            @media(min-width: 500px){
+                #container {
+                    width: 400px;
+                }
+                .message img {
+                     width: 400px; 
+                     height: 50px;
+                }
+
+            }
+            
+            @media (min-width: 800px) {
+                .home-icon {
+                    position: absolute;
+                    right: -40%;
+                }
+            }
+
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+            }
+            .clear-fix {
+                clear: both;
+            }
+            .message img {
+                margin-top: 40px;
+            }
+            .left {
+                position: absolute;
+                left: 35%;
+                top: 100px;
+            }
+            .message {
+                position: absolute;
+                top: 200px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div id="container">
+        <div class="home-icon right">
+            <a href="JavaScript:history.go(-1);" title="Return back home">
+                <img src="Home-icon.png"  alt="Click here to return to a known area" width="47px" height="46px" />
+            </a>
+        </div>
+        <div class="left">
+            <img src="Chene-logo.png"  alt="Chene logo" width="114px" height="119px">
+        </div>
+        <div class="message clear-fix">
+            <img src="access.gif"  alt="Access denied" />
+        </div>
+    </div>
+    </body>
+</html>
