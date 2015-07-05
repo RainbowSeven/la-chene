@@ -10,6 +10,7 @@ $( function() {
             if(!filter.test(subscriber))
                 alert("Enter a valid email address");
             $.post(dataUrl, {email: subscriber}).done(function(d){
+              console.log(d);
               alert(d.message);
             });
     });
