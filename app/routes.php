@@ -16,6 +16,7 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+Route::get('/setup', 'SetupController@migrate')
 Route::get('/contact', 'ContactController@show');
 Route::get('/find-a-job', 'ApplicationController@index');
 Route::get('/apply/cita', 'EnrolController@index');
