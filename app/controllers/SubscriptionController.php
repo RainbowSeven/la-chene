@@ -8,11 +8,11 @@ class SubscriptionController extends BaseController {
         $validator = Validator::make(Input::all(), $rules);
 
         $contents = json_encode(['message'=>'Your subscription was unsuccessful.']);
-        $response = Response::make($contents, 200);
-        $response->header('Content-Type', 'text/json');
+        $failure = Response::make($contents, 200);
+        $failure->header('Content-Type', 'text/json');
 
         if($validator->fails())
-            return $response;
+            return $failure;
         $subscription = new Subscription;
         $subscription->email = Input::get('email');
         $subscription->active = 1;
@@ -26,9 +26,9 @@ class SubscriptionController extends BaseController {
         });
 
         $contents = json_encode(['message'=>'Your subscription was successful.']);
-        $response = Response::make($contents, 200);
-        $response->header('Content-Type', 'text/json');
-        return $response;
+        $success = Response::make($contents, 200);
+        $success->header('Content-Type', 'text/json');
+        return $success;
 
     }
 }
