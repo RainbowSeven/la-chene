@@ -15,6 +15,7 @@ class SubscriptionController extends BaseController {
             return $response;
         $subscription = new Subscription;
         $subscription->email = Input::get('email');
+        $subscription->active = 1;
         $subscription->save();
         $email = Input::get('email');
 
@@ -27,7 +28,7 @@ class SubscriptionController extends BaseController {
         $contents = json_encode(['message'=>'Your subscription was successful.']);
         $response = Response::make($contents, 200);
         $response->header('Content-Type', 'text/json');
-        return json_encode($response);
+        return $response;
 
     }
 }
