@@ -6,7 +6,9 @@ $( function() {
             event.preventDefault();
             var dataUrl = $('form.NL').attr('data-url');
             var subscriber = $('input[name=subscriber]').val();
-            console.log(subscriber);
+            var filter = /.+@.+\..+/i;
+            if(!filter.test(subscriber))
+                alert("Enter a valid email address");
             $.post(dataUrl, {email: subscriber}).done(function(d){
               alert(d.message);
             });
