@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/redmond/jquery-ui.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/jquery.navobile.css') }}">
+        <script type="text/javascript" src="{{ asset('js/modernizr.js') }}"></script>
 
 
 
@@ -30,14 +32,11 @@
     </head>
     <body style="overflow:hidden">
      @section('content')
-        <!-- site preloader start -->
-        <div class="page-loader">
-            <div class="loader-in"></div>
-        </div>
-        <!-- site preloader end -->
-
-        <div class="pageWrapper">
-
+        <div id="content" class="pageWrapper">
+            <div class="mobile-header-bar mobile-only" style="position:relative;">
+                <a href="#" id="show-navigation"><i class="fa fa-bars"></i></a>
+            </div>
+            
             <!-- login box start -->
             <div class="login-box">
                 <a class="close-login" href="#"><i class="fa fa-times"></i></a>
@@ -213,7 +212,6 @@
                     </div>
                 </header>
                 <!-- Logo, Global navigation menu and search end -->
-
             </div>
             <!-- Header End -->
 
@@ -382,13 +380,14 @@
                     </div>
                 </div>
                 <!-- footer bottom bar end -->
-
             </footer>
             <!-- Footer end -->
 
 
            <!-- Back to top Link -->
-            <div id="to-top" class="main-bg"><span class="fa fa-arrow-circle-up"></span></div>
+            <div id="to-top" class="main-bg">
+                <span class="fa fa-arrow-circle-up"></span>
+            </div>
 
         </div>
         <!-- Load JS siles -->
@@ -427,7 +426,8 @@
 
         <!-- Input placeholder plugin -->
         <script type="text/javascript" src="{{ asset('js/jquery.placeholder.js') }}"></script>
-
+        <script type="text/javascript" src="{{ asset('js/jquery.navobile.min.js') }}"></script>
+    
         <!-- general script file -->
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
                     <script type="text/javascript">
@@ -442,5 +442,8 @@
                     })();
                     </script>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+        <script type="text/javascript">
+            $('#responsive-nav').navobile();
+        </script>
     </body>
 </html>

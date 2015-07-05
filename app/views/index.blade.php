@@ -8,14 +8,15 @@
                         <ul>
                              <li data-transition="fade" data-slotamount="7">
                                 <img alt="" src="images/slider/dummy.png" data-lazyload="images/slider/slide-1-bg.jpg" data-bgposition="left center" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
-                                <div class="caption lfr" data-y="97" data-x="right" data-speed="600" data-start="1000"><img alt="" src="images/slider/slide-1-img.png"></div>
+                                <div class="caption lfr" data-y="97" data-x="right" data-speed="600" data-start="1000">
+                                    <img alt="" src="images/slider/slide-1-img.png">
+                                </div>
                                 <div class="caption lfl large-title tp-resizeme" data-x="0" data-y="135" data-speed="600" data-start="1600">Build</div>
                                 <div class="caption lfl large-title tp-resizeme main-color" data-x="0" data-y="187" data-speed="600" data-start="1800">Awesome</div>
                                 <div class="caption lfl large-title tp-resizeme" data-x="0" data-y="240" data-speed="600" data-start="2000">ICT Solutions</div>
                                 <div class="caption lfl large-text tp-resizeme" data-x="0" data-y="320" data-speed="600" data-start="2200">
                                 Hello, We are Ch&#234;ne Networks, we make really beautiful<br>
-                                and amazing IT Solutions.This can be used to describe <br>
-                                what you do,how you do it, &amp;  who you do it for. 
+                                and amazing IT Solutions.
                                 </div>
                             </li>
                             <li data-transition="fade" data-slotamount="7">
@@ -47,9 +48,11 @@
                 <!-- Welcome Box start -->
                 <div class="welcome">
                     <div class="container">
-                        <h3 class="center block-head"><span class="main-color">Welcome To Ch&#234;ne Networks</span> - Where we create your World.....</h3>
-                        <p class="margin-bottom-0">Ch&#234;ne Networks was created for the purpose of providing Professional ICT Services and training.</p>Our goal is to set the standard for on-site computer solutions through fast, on-site service and response. Our customers will always receive one-on-one personal attention at a very affordable price. Our customers will receive the highest quality of customer service available. Based on a challenging, improving and a great place to work; our employees will receive extensive training, fair pay, benefits and incentives to use their own good judgement to solve customers' problems. We have taken effective and efficient customer service delivery and staff satisfaction as our major priorities.</p>
-
+                        <h3 class="center block-head">
+                            <span class="main-color">Welcome To Ch&#234;ne Networks</span> - Where we create your World.....
+                        </h3>
+                        <p class="margin-bottom-0">Ch&#234;ne Networks was created for the purpose of providing Professional ICT Services and training.</p>
+                        <p class="margin-bottom-0">Our goal is to set the standard for on-site computer solutions through fast, on-site service and response. Our customers will always receive one-on-one personal attention at a very affordable price. Our customers will receive the highest quality of customer service available. Based on a challenging, improving and a great place to work; our employees will receive extensive training, fair pay, benefits and incentives to use their own good judgement to solve customers' problems. We have taken effective and efficient customer service delivery and staff satisfaction as our major priorities.</p>
                         <p class="margin-bottom-0">The benefits we sell also include many intangibles, confidence, reliability, integrity, respect for individual, delivery on promise, professionalism and knowing that somebody will be there to answer questions.</p>
                     </div>
                 </div>
@@ -57,15 +60,23 @@
                 
                 <!-- Services boxes style 1 start -->
                 
-                <h3 class="center block-head"><span class="main-color">What we do</span></h3>
+                <h3 class="center block-head">
+                    <span class="main-color">What we do</span>
+                </h3>
                 <div class="gry-bg">
                     <div class="container">
                         <div class="row">
                             <div class="cell-3 service-box-1 fx" data-animate="fadeInUp" data-animation-delay="200">
                                 <div class="box-top">
                                     <i class="fa fa-database"></i>
-                                    <h3><span>Awesome & Seamless</span><br>ICT Solutions</h3>
-                                    <p>With our customized technologies, Chene Networks will help you to bridge the Technological gaps in businesses, ideas,Visions, properties seamlessly because your business will actually drive itself technologically.</p>
+                                    <h3>
+                                        <span>Awesome & Seamless</span>
+                                        <br>
+                                        ICT Solutions
+                                    </h3>
+                                    <p>
+                                        With our customized technologies, Chene Networks will help you to bridge the Technological gaps in businesses, ideas,Visions, properties seamlessly because your business will actually drive itself technologically.
+                                    </p>
                                     <a class="more-btn" href="{{ url('services')}}">Read More</a>
                                 </div>
                             </div>
@@ -95,7 +106,8 @@
                             </div>
                         </div>
                     </div>
-                </div><div class="gry-bg">
+                </div>
+                <div class="gry-bg">
                 <h3 class="center block-head"><span class="main-color"></span></h3>
                     <div class="container">
                         <div class="row">
@@ -196,7 +208,6 @@
                                         </div>
                                         <!-- testimonials item end -->
                                         
-                                        
                                         <!-- testimonials item start -->
                                         <div>
                                             <div class="testimonials-bg">
@@ -228,32 +239,30 @@
                                                 </div>
                                             </div>
                                             <div class="testimonials-name"><strong>Mrs. Kuforiji </strong>Prospect School, Ota</div>
-                                            
+                                        </div>  
                                     <!-- testimonials Slider -->        
                                             
-<script type="text/javascript">
+                                    <script type="text/javascript">
 
-        jQuery(function($){
-            $('.testimonials-slider ul').cycle({
-                fx : 'scrollHorz',
-                speed: 500,
-                timeout: 5000,
-                next: '.testimonials-slider .next',
-                prev: '.testimonials-slider .prev'
-            });
-        });
-
-</script>
+                                            jQuery(function($){
+                                                $('.testimonials-slider ul').cycle({
+                                                    fx : 'scrollHorz',
+                                                    speed: 500,
+                                                    timeout: 5000,
+                                                    next: '.testimonials-slider .next',
+                                                    prev: '.testimonials-slider .prev'
+                                                });
+                                            });
+                                    </script>
                                 
-                                <!-- testimonials Slider -->        
-                            </div>
-                                        <!-- testimonials item end -->
+                                    <!-- testimonials Slider -->        
                                     </div>
-                                    <p class="padd-top-20">The testimonies of our clients as inspiring as they are, yet; we will not rest on our oars to deliver available and affordable technologies to simplify your activities and in turn, create your desired world.</p>
+                                    <!-- testimonials item end -->
                                 </div>
+                                <p class="padd-top-20">The testimonies of our clients as inspiring as they are, yet; we will not rest on our oars to deliver available and affordable technologies to simplify your activities and in turn, create your desired world.
+                                </p>
                                 
                                 <!-- testimonials end -->
-                            
                             </div>
                             <!-- about us left block end -->
                                                         
@@ -339,7 +348,7 @@
                                 <div class="fx" data-animate="fadeInLeft">
                                     <h3 class="block-head">Why Ch&#234;ne Networks</h3>
                                     <ul class="list prim list-ok">
-                                        <li class="fx" data-animate="fadeInLeft">Ch&#234;ne Networks will get your businesses connected to the world securely and communicate more effectively using reliable, affordable options that fit your unique needs. </li>
+                                        <li class="fx" data-animate="fadeInLeft">Ch&#234;ne Networks will get your businesses connected to the world securely and communicate more effectively using reliable, affordable options that fit your unique needs.</li>
                                         <li class="fx" data-animate="fadeInRight" data-animation-delay="200">We will provide you with a customized solution from our Laboratory and our partners that can help you address challenges in private and business environments to help achieve a better return on investment (ROI).</li>
                                         
                                         <li class="fx" data-animate="fadeInLeft" data-animation-delay="400">We provide true end-to-end Professional IT Solutions, Sales and Marketing, with our excellent Service delivery and customer Solution, well publicized online ordering, quality product and Professional trusting services to our Clients irrespective of geographical locations.</li>
@@ -396,7 +405,7 @@
                         <!-- staff item end -->
                         
                     </div><!-- .container end -->
-                </div><!-- .funn-staff end -->
+                </div>
                 <!-- FUN Staff end -->
                 
                 <!-- projects start -->
@@ -604,10 +613,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
                 <!-- projects end -->
                 
-            </div>
             
             <!-- Content End -->     
     @stop
