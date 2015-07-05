@@ -8,7 +8,10 @@ $( function() {
             var subscriber = $('input[name=subscriber]').val();
             var filter = /.+@.+\..+/i;
             if(!filter.test(subscriber))
+            {
                 alert("Enter a valid email address");
+                return false;
+            }
             $.post(dataUrl, {email: subscriber}).done(function(d){
               console.log(d);
               alert(d.message);
