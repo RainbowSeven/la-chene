@@ -1,4 +1,4 @@
-﻿
+
 .container {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -31,7 +31,7 @@
 .cell-3 {width: 25%;}
 .cell-2 {width: 16.66666667%;}
 .cell-1 {width: 8.33333333%;}
-.responsive-nav,.menuBtn{
+#responsive-nav,#show-navigation{
 	display:none
 }
 @media (min-width: 1200px) {
@@ -266,16 +266,7 @@
 	body{
 		overflow-x:hidden
 	}
-	.responsive-nav{
-		position:fixed;
-		width:60%;
-		overflow:auto;
-		left:0;
-		top:0px;
-		height:100%;
-		z-index:1;
-		display:block
-	}
+	
 	.colBody {
 		position:fixed;
 		margin-left:60%;
@@ -289,80 +280,7 @@
 		display:inline-block;
 		z-index:99999
 	}
-	.menuBtn{
-		padding: 9px 12px 8px 12px;
-	    margin: 0;
-	    cursor:pointer;
-	    z-index:999;
-	    top:0px;
-	    left:0px;
-		position: absolute;
-	    transition: all 0.4s ease;
-		-webkit-transition: all 0.4s ease;
-		-moz-transition: all 0.4s ease;
-		display:block
-	}
-	.menuBtn-selected{
-		margin-left:45%
-	}
-	.menuBtn-selected i:before{
-		content:"\f00d"
-	}
-	.menuBtn:focus,.menuBtn:hover{
-		color:#fff
-	}
-	.menuBtn i{
-		font-size: 21px;
-	}
-	.responsive-nav h3{
-		color:#fff;
-		margin:0px;
-		padding:15px;
-		font-size:100%;
-		text-transform:uppercase;
-		font-weight:bold
-	}
-	.responsive-nav ul li{
-		position: relative;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-	}
-	.responsive-nav ul li a{
-		display: block;
-		color: #fff;
-		font-size: 14px;
-		outline: none;
-		padding:10px 15px;
-		text-transform:uppercase
-	}
-	.responsive-nav ul li a i{
-		margin-right:10px
-	}
-	.responsive-nav > ul > li.selected{
-		background:#474747
-	}
-	.responsive-nav ul li a:hover{
-		text-decoration:none
-	}
-	.responsive-nav ul li ul,.responsive-nav ul li div.div-mega{
-		display: none;
-	}
-	.div-mega-section{
-		float:none;
-		width:100%
-	}
-	.responsive-nav ul li ul li a{
-		font-size:13px;
-		text-transform:none
-	}
-	.responsive-nav ul li ul li.selected{
-		background:#575757
-	}
-	.responsive-nav ul ul ul{
-		margin-left:25px
-	}
-	.responsive-nav ul ul ul li a{
-		font-size:11px
-	}
+
 	.portfolio-items > div{
 		width:48%;
 		float:left;
@@ -396,6 +314,13 @@
 	}
 }
 @media (max-width: 640px){
+	#show-navigation{
+		position: relative;
+		display: block;
+	}
+	#responsive-nav{
+		display: block;
+	}
 	.pager,.pager *{
 		transform: skew(0deg, 0);
 		-webkit-transform: skew(0deg, 0);
