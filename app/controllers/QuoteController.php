@@ -17,11 +17,11 @@ class QuoteController extends BaseController {
                 'email'            => 'required',
                 'phone'            => 'required',
                 'location'         => 'required',
-                'service-category' => 'required',
-                'service-detail'   => 'required'
+                'service_category' => 'required',
+                'service_detail'   => 'required'
             ];
 
-        $validator = Validation::make(Input::all(), $rules);
+        $validator = Validator::make(Input::all(), $rules);
 
         # Handle invalid data
         if($validator->fails())
@@ -39,11 +39,29 @@ class QuoteController extends BaseController {
         $quote->save();
 
         # Shoot email to marketing team
-        Mail::send('emails.marketing', array(Input::all()), function($message)
+        Mail::send('emails.marketing', Input::all(), function($message)
         {
-            $message->to('marketing@chenenetworks.com')->subject($email.' is requesting a quote');
+            $message->to('marketing@chenenetworks.com')->subject(Input::get('email').' is requesting a quote');
         });
+
+        return View::make('thank_you')->with(['person'=>'experienced personnel']);
 	}
 
-	
+    public function get() {
+        $x = Quote::all();
+        $data['res'] = $x;
+        $data['res_type'] = 'quote';
+        return View::make('admin.result.master.quote', $data);
+    }	
+
+    public function reply() {
+        $data = ['body'=>Input::get('message')];
+        Mail::send('emails.auth.contact', $data, function($message)
+        {
+            $message->from('marketing@chenenetworks.com', 'Chêne Networks');
+            $message->to(Input::get('email'));
+            $message->subject(Input::get('subject', 'Feedback from Chêne Networks'));
+        });
+        return "Done";
+    }
 }

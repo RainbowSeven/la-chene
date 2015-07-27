@@ -94,7 +94,7 @@
 			    			</div>
 			    			<div class="cell-3 fx" data-animate="fadeInDown">
 								<h3 class="bold main-color"></h3>
-									<a href="{{ url('cita-form') }}">
+									<a href="{{ url('apply/cita') }}">
 										<img class="fx" data-animate="fadeInDown" alt="apply button" src="images/apply-now.png">
 									</a>
 								</div>	    				

@@ -31,4 +31,28 @@ class SubscriptionController extends BaseController {
         return $success;
 
     }
+
+    public function get()
+    {
+        $x = Subscription::orderBy('created_at','desc')->get();
+        $data['res'] = $x;
+        $data['res_type'] = 'contact messages';
+        return View::make('admin.result.master.subscriber', $data);
+    }
+
+    public function reply()
+    {
+        $data['body'] = Input::get('message');
+        Mail::queue('emails.auth.contact', $data, function($message)
+        {
+            $subscribers = Subscription::lists('email');
+            foreach($subscribers as $subscriber) {
+                $message->to($subscriber);
+                $message->subject(Input::get('subject', 'Newsletter | Chêne Networks'));
+                $message->from('newsletter@chenenetworks.com');
+            }
+        });
+        return "Done";
+    }
+
 }

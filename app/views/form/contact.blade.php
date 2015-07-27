@@ -59,11 +59,11 @@
 			    				<div class="padding-vertical">
 			    					<div class="cell-5 fx" data-animate="fadeInRight">
 				    					<h4 class="main-color bold">Head Office</h4>
-				    					<h5 >Address:</h5>
+				    					<h5>Address:</h5>
 				    					<p>K.M 4, Idi Iroko Road, (Beside Justrite Superstores),Ota, Ogun State, Nigeria.</p>
-				    					<h5 >Email:</h5>
+				    					<h5>Email:</h5>
 				    					<p>info@chenenetworks.com</p>
-				    					<h5 >Phone:</h5>
+				    					<h5>Phone:</h5>
 				    					<p>+2348062417929</p>
 				    					<h5 >Day Phone:</h5>
 				    					<p>+2348091562770</p>
@@ -71,13 +71,13 @@
 				    				<div class="cell-2"><br></div>
 				    				<div class="cell-5 fx" data-animate="fadeInRight">
 				    					<h4 class="main-color bold">Lagos Office</h4>
-				    					<h5 >Address:</h5>
+				    					<h5>Address:</h5>
 				    					<p>4 Akinremi Street, (Shalek Building), Anifowoshe, Ikeja, Lagos, Nigeria</p>
-				    					<h5 >Email:</h5>
+				    					<h5>Email:</h5>
 				    					<p>marketing@chenenetworks.com</p>
-				    					<h5 >Phone:</h5>
+				    					<h5>Phone:</h5>
 				    					<p>+2348076013085</p>
-				    					<h5 >Day Phone:</h5>
+				    					<h5>Day Phone:</h5>
 				    					<p>+2348090605075</p>
 				    				</div>
 									
@@ -108,8 +108,8 @@
 				    		function init_map(){
 				    			var myOptions = {zoom:14,center:new google.maps.LatLng(6.667746,3.21114),
 				    			mapTypeId: google.maps.MapTypeId.ROADMAP};
-				    			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-					    		marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(6.667746,3.21114)});
+				    			var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+					    		var marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(6.667746,3.21114)});
 				    			infowindow = new google.maps.InfoWindow({content:"<strong>Ch&#234;ne Networks</strong></br>KM 4, Idi-Iroko Road,</br>Ota, Ogun State, Nigeria.</br>+2348062417929." });
 				    			google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
 				    			infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);

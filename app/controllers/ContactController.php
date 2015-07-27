@@ -38,4 +38,26 @@ class ContactController extends BaseController{
         
         return View::make('thank_you')->with(['person'=>'Customer care agents']);
     }
+
+    public function get()
+    {
+        $x = Contact::orderBy('created_at','desc')->get();
+        $data['res'] = $x;
+        $data['res_type'] = 'contact messages';
+        return View::make('admin.result.master.message', $data);
+    }
+
+    public function reply()
+    {
+        $data = ['body'=>Input::get('message')];
+        Mail::send('emails.auth.contact', $data, function($message)
+        {
+            $message->from('info@chenenetworks.com', 'Chêne Networks');
+            $message->to(Input::get('email'));
+            $message->subject(Input::get('subject', 'Feedback from Chêne Networks'));
+        });
+        return "Done";
+
+    }
+
 }

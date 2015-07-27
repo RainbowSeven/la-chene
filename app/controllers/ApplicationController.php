@@ -57,4 +57,20 @@ class ApplicationController extends BaseController {
        return View::make('thank_you')->with(['person'=>'HR agents','breadcrumb'=>'team']);
     }
 
+    public function get() {
+        $x = Application::orderBy('created_at', 'desc')->get();
+        $data['res'] = $x;
+        return View::make('admin.result.master.application', $data);
+    }
+
+    public function reply() {
+        $data = ['body'=>Input::get('message')];
+        Mail::send('emails.auth.contact', $data, function($message)
+        {
+            $message->from('hr@chenenetworks.com', 'Chêne Networks');
+            $message->to(Input::get('email'));
+            $message->subject(Input::get('subject', 'Feedback from Chêne Networks'));
+        });
+        return "Done";
+    }
 }

@@ -25,7 +25,7 @@
 									<div class="form-input">
 			    						<label>Interested Service<span class="red">*</span></label>
 			    						<select name="service_category" required>
-			    							<option selected="" value="">Please select your preferred service</option>  
+			    							<option value="None">Please select your preferred service</option>  
 											<option value="Customizations and Branding">Customizations and Branding</option>
 											<option value="Software Development">Software Development</option>
 											<option value="Photo Journalism">Photo Journalism</option>
@@ -71,7 +71,7 @@
 			    					
 			    					<div class="form-input">
 			    						<label>Location<span class="red">*</span></label>
-			    						<input id="location" name="location" type="text" placeholder="Specify your location" required>
+			    						<input  class="input-large" name="location" id="location" type="text" placeholder="Specify the state you're located at">
 			    					</div>								
 			    					
 			    					<div class="form-input">
