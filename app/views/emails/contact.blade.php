@@ -6,5 +6,5 @@ Email: {{ $email }} <br>
 Phone: {{$phone }} <br>
 </div>
 <blockquote>Message:<br>
-    {{ $message }}
+    {{ $messages }}
 </blockquote>
