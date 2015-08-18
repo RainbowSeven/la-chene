@@ -1,31 +1,33 @@
 <?php
 
-class QuoteController extends BaseController {
+class QuoteController extends BaseController
+{
 
-	public function index()
-	{
-		return View::make('form.quote');
-	}
+    public function index()
+    {
+        return View::make('form.quote');
+    }
 
-	# Save quote form
-	public function save()
-	{
+    # Save quote form
+    public function save()
+    {
         # Set validation rules
         $rules = [
-                'firstname'        => 'required',
-                'lastname'         => 'required',
-                'email'            => 'required',
-                'phone'            => 'required',
-                'location'         => 'required',
-                'service_category' => 'required',
-                'service_detail'   => 'required'
-            ];
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'location' => 'required',
+            'service_category' => 'required',
+            'service_detail' => 'required',
+        ];
 
         $validator = Validator::make(Input::all(), $rules);
 
         # Handle invalid data
-        if($validator->fails())
-            return View::make('error')->with('message','Looks like there\'s some missing data');
+        if ($validator->fails()) {
+            return View::make('error')->with('message', 'Looks like there\'s some missing data');
+        }
 
         $quote = new Quote;
         $quote->firstname = Input::get('firstname');
@@ -37,27 +39,27 @@ class QuoteController extends BaseController {
         $quote->service_detail = Input::get('service_detail');
 
         $quote->save();
-
+        $email = Input::get('email');
         # Shoot email to marketing team
-        Mail::send('emails.marketing', Input::all(), function($message)
-        {
-            $message->to('marketing@chenenetworks.com')->subject(Input::get('email').' is requesting a quote');
+        Mail::send('emails.marketing', Input::all(), function ($message) use ($email) {
+            $message->to('marketing@chenenetworks.com')->subject($email . ' is requesting a quote');
         });
 
-        return View::make('thank_you')->with(['person'=>'experienced personnel']);
-	}
+        return View::make('thank_you')->with(['person' => 'experienced personnel']);
+    }
 
-    public function get() {
+    public function get()
+    {
         $x = Quote::all();
         $data['res'] = $x;
         $data['res_type'] = 'quote';
         return View::make('admin.result.master.quote', $data);
-    }	
+    }
 
-    public function reply() {
-        $data = ['body'=>Input::get('message')];
-        Mail::send('emails.auth.contact', $data, function($message)
-        {
+    public function reply()
+    {
+        $data = ['body' => Input::get('message')];
+        Mail::send('emails.auth.contact', $data, function ($message) {
             $message->from('marketing@chenenetworks.com', 'Chêne Networks');
             $message->to(Input::get('email'));
             $message->subject(Input::get('subject', 'Feedback from Chêne Networks'));
