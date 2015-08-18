@@ -1,6 +1,7 @@
 <?php
 
-class ContactController extends BaseController{
+class ContactController extends BaseController
+{
     # Show contact form
     public function show()
     {
@@ -15,11 +16,12 @@ class ContactController extends BaseController{
             'lastname' => 'required',
             'phone' => 'required',
             'message' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email',
         ];
         $validator = Validator::make(Input::all(), $rules);
-        if($validator->fails())
-            return View::make('error')->with('message','Looks like there\'s some missing data');
+        if ($validator->fails()) {
+            return View::make('error')->with('message', 'Looks like there\'s some missing data');
+        }
 
         # Create new contact record
         $contact = new Contact;
@@ -31,17 +33,16 @@ class ContactController extends BaseController{
         $contact->save();
 
         # Shoot email to customer service team
-        Mail::send('emails.contact', array(Input::all()), function($message)
-        {
-            $message->to('info@chenenetworks.com')->subject($email.' is requesting some information');
+        Mail::send('emails.contact', array(Input::all()), function ($message) {
+            $message->to('info@chenenetworks.com')->subject($email . ' is requesting some information');
         });
-        
-        return View::make('thank_you')->with(['person'=>'Customer care agents']);
+
+        return View::make('thank_you')->with(['person' => 'Customer care agents']);
     }
 
     public function get()
     {
-        $x = Contact::orderBy('created_at','desc')->get();
+        $x = Contact::orderBy('created_at', 'desc')->get();
         $data['res'] = $x;
         $data['res_type'] = 'contact messages';
         return View::make('admin.result.master.message', $data);
@@ -49,11 +50,11 @@ class ContactController extends BaseController{
 
     public function reply()
     {
-        $data = ['body'=>Input::get('message')];
-        Mail::send('emails.auth.contact', $data, function($message)
-        {
+        $data = ['body' => Input::get('message')];
+        $email = Input::get('email');
+        Mail::send('emails.auth.contact', $data, function ($message) use ($email) {
             $message->from('info@chenenetworks.com', 'Chêne Networks');
-            $message->to(Input::get('email'));
+            $message->to($email);
             $message->subject(Input::get('subject', 'Feedback from Chêne Networks'));
         });
         return "Done";
