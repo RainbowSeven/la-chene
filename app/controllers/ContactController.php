@@ -33,8 +33,8 @@ class ContactController extends BaseController
         $contact->save();
 
         # Shoot email to customer service team
-        $email = Input::get('email');
-        Mail::send('emails.contact', array(Input::all()), function ($message) use ($email) {
+        $em = Input::get('email');
+        Mail::send('emails.contact', array(Input::all()), function ($message) use ($em) {
             $message->to('info@chenenetworks.com')->subject($email . ' is requesting some information');
         });
 
