@@ -23,7 +23,7 @@ class SubscriptionController extends BaseController
         $email = Input::get('email');
         $subject = "Subscribe {$email} to Newsletter";
         #Shoot email to subscription service
-        Mail::send('emails.subscription', array('email' => $email), function ($message) use subject {
+        Mail::send('emails.subscription', array('email' => $email), function ($message) use $(subject) {
             $message->to('newsletter@chenenetworks.com')->subject($subject);
         });
 
