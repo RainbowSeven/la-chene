@@ -34,8 +34,8 @@ class ContactController extends BaseController
 
         # Shoot email to customer service team
         $em = Input::get('email');
-        Mail::send('emails.contact', array(Input::all()), function ($message) use ($em) {
-            $message->to('info@chenenetworks.com')->subject($email . ' is requesting some information');
+        Mail::send('emails.contact', Input::all(), function ($message) use ($em) {
+            $message->to('info@chenenetworks.com')->subject($em . ' is requesting some information');
         });
 
         return View::make('thank_you')->with(['person' => 'Customer care agents']);
