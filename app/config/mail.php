@@ -56,7 +56,7 @@ return array(
     |
      */
 
-    'from' => array('address' => null, 'name' => null),
+    'from' => array('address' => $_ENV['DEFAULT_MAILER'], 'name' => $_ENV['DEFAULT_MAILER_NAME']),
 
     /*
     |--------------------------------------------------------------------------
