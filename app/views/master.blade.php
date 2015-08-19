@@ -36,7 +36,7 @@
             <div class="mobile-header-bar mobile-only" style="position:relative;">
                 <a href="#" id="show-navigation"><i class="fa fa-bars"></i></a>
             </div>
-            
+
             <!-- login box start -->
             <div class="login-box">
                 <a class="close-login" href="#"><i class="fa fa-times"></i></a>
@@ -427,7 +427,7 @@
         <!-- Input placeholder plugin -->
         <script type="text/javascript" src="{{ asset('js/jquery.placeholder.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.navobile.min.js') }}"></script>
-    
+
         <!-- general script file -->
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
                     <script type="text/javascript">
